@@ -1,0 +1,23 @@
+
+
+
+.row{
+ height: 18em;
+}
+
+#div_playlist{
+    padding:1em;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5.5em;
+    background-color:#262626;
+    border-radius: 1%;
+    
+}
+
+#fundo{
+    padding-top:0.3em;
+    padding-bottom:10em;
+    background: #121212;
+}
+

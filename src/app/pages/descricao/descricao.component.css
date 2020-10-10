@@ -1,0 +1,26 @@
+#about{
+    margin-top: 10em;
+    margin-left: 10%;
+    
+    
+}
+
+#fundo{
+    background: linear-gradient(90deg, rgba(157,98,149,1) 0%, rgba(140,125,173,1) 50%, rgba(118,151,195,1) 100%);
+    padding-top:0.3em;
+    padding-bottom:12em;
+}
+
+
+#about_texto{
+    margin-left: 5em;
+}
+#nav_container{
+    margin-left: 30px;
+}
+
+#about_paragrafo{
+    font-size: larger;
+    
+    
+}
