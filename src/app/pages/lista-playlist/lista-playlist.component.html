@@ -6,36 +6,18 @@
     <div id="div_playlist">
         <h1 Style ="text-align: center; color: white;">Grandes playlists para melhorar seu dia!</h1>
         <div class="container" id="teste">
-            <div class="row">
-            <div class="col" style="background-image: url(assets/teste1.png);">
-                    
-                    
+           <div class="row">
+              
+              <div  *ngFor="let list of lists"class="card text-white bg-primary mb-3" style="width: 15rem;">
+                  <img class="card-img-top" src="{{list.foto}}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{list.nome}}</h5>  
+                  </div>
                 </div>
-                <div class="col" style="background-image: url(assets/teste2.png);">
-                    
-                </div>
-                <div class="col" style="background-image: url(assets/teste3.jpg);">
-                    
-                </div>
-                <div class="col" style="background-image: url(assets/teste4.png);">
-                    
-                </div>
+
             </div>
+           
             
-            <div class="row">
-                <div class="col" style="background-image: url(assets/teste5.png);">
-                   
-                </div>
-                <div class="col" style="background-image: url(assets/teste6.png);">
-                    
-                </div>
-                <div class="col" style="background-image: url(assets/teste7.png);">
-                   
-                </div>
-                <div class="col" style="background-image: url(assets/teste8.png);" >
-                    
-                </div>
-            </div>
         </div>
     </div>
 </div>
