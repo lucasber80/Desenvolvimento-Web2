@@ -1,1 +1,25 @@
+img{
+    height: 15em ;
+    width: 15em ;
 
+}
+#fundo{
+    background-color: #666666;
+    display: grid;
+}
+#content{
+    padding: 10em;
+}
+
+#nomedamusica{
+    font-size: small;
+}
+#duracao{
+    font-size: x-small;
+}
+#artista{
+    font-size: x-small;
+}
+#album{
+    font-size: x-small;
+}
