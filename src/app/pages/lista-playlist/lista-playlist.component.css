@@ -9,15 +9,15 @@
     padding:1em;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 5.5em;
+    margin-bottom: 50em;
     background-color:#262626;
     border-radius: 1%;
     
 }
 
 #fundo{
-    padding-top:0.3em;
-    padding-bottom:10em;
+   margin:0em;
+   padding:0em;
     background: #121212;
 }
 
