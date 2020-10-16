@@ -2,37 +2,36 @@
   <div id = "content" class="container">
       <div class = "row">
             <div class = "col">
-                <img src="assets/teste1.png">
+                <img src="{{playlist.foto}}">
                 <p id = "nomeplaylist">{{playlist.nome}}</p>
             </div>
         <div class = "col">
-            <div id = "musica">
+            <div *ngFor="let musica of playlist.musicas;index as i" id = "musica">
                 <div class = "row display flex" id = "nome">
                     <div class = "col-2">
-                        <button type="button">Play</button>
+                       
+                        <button  (click)="audioPlayer($event.target.id)" type="button" id="{{i}}"></button>
+                       
                     </div>
                     <div class = "col-4">
-                        <p id = "nomedamusica">{{playlist.musicas[0].nome}}</p>
+                        <p id = "nomedamusica">{{musica.nome}}</p>
                     </div>
                     <div class = "col-2">
-                        <p id = "duracao">Dur</p>
+                        <p id = "duracao">{{musica.duracao}}</p>
                     </div>
         
                 </div>
                 <div class = "row display flex" id = "album">
                     <div class = "col-2 offset-md-2">
-                        <p id = "artista"> Artista</p>
+                        <p id = "artista"> {{musica.cantor}}</p>
                     </div>
                     <div class = "col-2">
-                        <p id = "album">Album</p>
+                        <p id = "album">{{musica.album}}</p>
                     </div>
                 </div>
             </div>
         </div>
       </div>
-<audio controls>
-    <source src = "..\..\..\assets\BRABA.mp3" type="audio/mp3" > 
-</audio>
     </div>
 </div>
 

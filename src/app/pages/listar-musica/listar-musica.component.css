@@ -26,3 +26,10 @@ img{
 #nome{
     height: 20px;
 }
+button{
+    border: none;
+    background: url("src\assets\play_button.png") no-repeat;
+    height: 32px;
+    width: 32px;
+
+}
