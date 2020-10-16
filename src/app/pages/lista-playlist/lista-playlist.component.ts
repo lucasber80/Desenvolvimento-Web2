@@ -9,7 +9,6 @@ import { PlaylistInterface } from '../playlist';
 })
 export class ListaPlaylistComponent implements OnInit {
   lists = playlists;
-  listsView:PlaylistInterface[][];
   
   constructor() {};
 

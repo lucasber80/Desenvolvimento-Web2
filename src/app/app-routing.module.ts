@@ -12,7 +12,7 @@ const routes: Routes = [
  {path:"descriçao",component:DescricaoComponent},
  {path:"faq",component:FaqComponent},
  {path:"lista-playlist",component:ListaPlaylistComponent},
- {path:"listar-musica", component:ListarMusicaComponent},
+ {path:"listar-musica/:playlistId", component:ListarMusicaComponent},
  {
   path: '',
   pathMatch: 'full',
