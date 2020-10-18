@@ -1,14 +1,16 @@
 img{
     height: 15em ;
     width: 15em ;
+    margin-bottom: 5em;
 
 }
 #fundo{
     background-color: #666666;
     display: grid;
 }
-#content{
-    padding: 10em;
+#conteudo{
+padding: 10em;
+
 }
 
 #nomedamusica{
@@ -22,14 +24,18 @@ img{
 }
 #album{
     font-size: x-small;
+  
 }
 #nome{
     height: 20px;
 }
-button{
-    border: none;
-    background: url("src\assets\play_button.png") no-repeat;
-    height: 32px;
-    width: 32px;
 
+button{
+    
+    height: 32px;
+    width: auto;
+}
+
+#playlist{
+    margin-bottom:5%;
 }

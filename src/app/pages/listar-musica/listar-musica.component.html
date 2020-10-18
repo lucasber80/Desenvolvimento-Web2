@@ -1,19 +1,18 @@
 <div id = "fundo">
-  <div id = "content" class="container">
+  <div id = "conteudo" class="container">
       <div class = "row">
             <div class = "col">
                 <img src="{{playlist.foto}}">
-                <p id = "nomeplaylist">{{playlist.nome}}</p>
             </div>
-        <div class = "col">
-            <div *ngFor="let musica of playlist.musicas;index as i" id = "musica">
+        <div id = "playlist" class = "col">
+            <div class = "container pt-3" *ngFor="let musica of playlist.musicas;index as i" id = "musica{{i}}">
                 <div class = "row display flex" id = "nome">
                     <div class = "col-2">
                        
-                        <button  (click)="audioPlayer($event.target.id)" type="button" id="{{i}}"></button>
+                        <button (click)="audioPlayer($event.target.id)" type="button" id="{{i}}">Play</button>
                        
                     </div>
-                    <div class = "col-4">
+                    <div class = "col-7">
                         <p id = "nomedamusica">{{musica.nome}}</p>
                     </div>
                     <div class = "col-2">
@@ -21,11 +20,11 @@
                     </div>
         
                 </div>
-                <div class = "row display flex" id = "album">
-                    <div class = "col-2 offset-md-2">
+                <div class = "row display flex" id = "albumdiv">
+                    <div class = "col-3 offset-md-2">
                         <p id = "artista"> {{musica.cantor}}</p>
                     </div>
-                    <div class = "col-2">
+                    <div class = "col-5">
                         <p id = "album">{{musica.album}}</p>
                     </div>
                 </div>
