@@ -8,30 +8,45 @@ import {playlists} from '../mock-playlist';
   styleUrls: ['./listar-musica.component.css']
 })
 export class ListarMusicaComponent implements OnInit {
-  playlistID: any
-  playlist: any
-  audio:any 
-  musicaatual: any
+  public playlistID: any
+  public playlist: any
+  public audio:any 
+  public musicaatual: string
+  public playlistsize:number
+  
  
   constructor(private route: ActivatedRoute) {
   
   }
  
   ngOnInit(): void {
-    this.audio = new Audio()
+    this.audio = document.getElementById("audio")
     this.playlistID = this.route.snapshot.paramMap.get("playlistId")
     this.playlist = playlists[this.playlistID]
-   
+  
+    this.audio.onended= () =>{
+         if(parseInt(this.musicaatual)<this.playlist.musicas.length - 1){
+           this.audioPlayer(String(parseInt(this.musicaatual)+1))
+         }else{
+          this.stopMusic(this.musicaatual)
+         }
+    };
+
+
     
-    
-  }
+      
+  };
+
+
+
+  
+  
   ngOnDestroy(): void{
     this.audio.pause()
   }
   audioPlayer(musicaId:any) {
-    
     if(this.musicaatual != musicaId){
-      if(this.musicaatual != null){
+      if(this.musicaatual != undefined){
         this.stopMusic(this.musicaatual)
       }
       this.musicaatual = musicaId
@@ -39,11 +54,10 @@ export class ListarMusicaComponent implements OnInit {
       this.audio.play();
       var button = document.getElementById(musicaId)
       button.textContent = "Stop"
+     
       var div = document.getElementById("musica" + musicaId)
       div.style.backgroundColor = "#1DB954"
       
-   
-     
       
     }else{
       this.stopMusic(this.musicaatual)
@@ -56,13 +70,14 @@ export class ListarMusicaComponent implements OnInit {
     var button = document.getElementById(id)
     button.textContent = "Play"
     this.audio.pause()
-    this.musicaatual = null
+    this.audio.src = ""
+    this.musicaatual = undefined
     var div = document.getElementById("musica" + id)
     div.style.backgroundColor = ""
 
 
   }
- 
+
   
 
 }
