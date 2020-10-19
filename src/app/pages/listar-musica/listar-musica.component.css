@@ -5,26 +5,36 @@ img{
 
 }
 #fundo{
+    padding-bottom: 10em;
     background-color: #666666;
     display: grid;
 }
 #conteudo{
-padding: 10em;
+padding: 4em;
+padding-bottom: 13em;
+margin-top: 6em;
 
 }
 
 #nomedamusica{
-    font-size: small;
+    font-size: medium;
+    
+    color: #C9C6C2;
 }
 #duracao{
-    font-size: x-small;
+    font-size: small;
+    
+    color: #828587;
 }
 #artista{
-    font-size: x-small;
+    font-size: small;
+   
+    color: #828587;
 }
 #album{
-    font-size: x-small;
-  
+    font-size: small;
+    
+    color: #828587;
 }
 #nome{
     height: 20px;
@@ -38,4 +48,20 @@ button{
 
 #playlist{
     margin-bottom:5%;
+    padding-right: 0em;
 }
+
+font{
+    font-weight: bold;
+}
+
+#music:hover{
+    background-color: #515050;
+}
+
+#music{
+    padding-right: 0em;
+}
+
+
+
