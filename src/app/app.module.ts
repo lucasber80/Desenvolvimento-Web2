@@ -9,6 +9,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { ListarMusicaComponent } from './pages/listar-musica/listar-musica.component';
 import { ListaPlaylistComponent } from './pages/lista-playlist/lista-playlist.component';
+import { FormularioComponent } from './pages/formulario/formulario.component';
 
 
 
@@ -21,6 +22,7 @@ import { ListaPlaylistComponent } from './pages/lista-playlist/lista-playlist.co
     FaqComponent,
     ListarMusicaComponent,
     ListaPlaylistComponent,
+    FormularioComponent,
     
     
   ],

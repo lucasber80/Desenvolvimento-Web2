@@ -1,0 +1,51 @@
+<form>
+    <div id="img">
+      <img  src="../assets/logo.png" width="142">
+    </div>
+  
+     <div id="sub">
+       Inscrever-se com seu endereco de email
+     </div>
+
+    <div id="blocoE">
+      <input class="form-control" type="text" id="email-usuario" placeholder="E-mail">
+    </div>
+  
+    <div id="blocoCE">
+      <input class="form-control" type="text" id="email-usuarioC" placeholder="Confirme e-mail">
+    </div>
+  
+    <div id="blocoS">
+      <input class="form-control" type="text" id="senha" placeholder="Senha">
+    </div>
+  
+    <div id="blocoCSC">
+      <input class="form-control" type="text" id="chamado" placeholder="Como devemos chamar você?">
+    </div>
+  
+    <div id="date">
+      <input type="date" formControlName="nascimento" placeholder="Data de nascimento">
+    </div>
+  
+    <span id="space">
+      <input type="radio" id="male" name="gender" value="male">
+      <label style="margin-left: 1%;" for="male">Masculino</label>
+    </span>
+
+    <span id="space">
+      <input type="radio" id="female" name="gender" value="female">
+      <label style="margin-left: 1%;" for="female">Feminino</label>
+    </span>
+
+    <span>
+      <input type="radio" id="other" name="gender" value="other">
+      <label style="margin-left: 1%;" for="other">Choppa de combate</label>
+    </span>
+  
+    <div>
+      <button (click)="click()"
+       style="margin: 2%;" class= "btn btn-success btn-lg rounded-pill" type="button" data-toggle="modal" data-target="#exampleModal">Inscrever-se</button>
+    </div>
+  
+  </form>
+
