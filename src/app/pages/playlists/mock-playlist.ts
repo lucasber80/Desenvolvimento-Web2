@@ -1,6 +1,5 @@
 import {PlaylistInterface} from './playlist'
-import {Musica} from './musica'
-import { Musicas } from './mock-musicas';
+import { Musicas } from '../mock-musicas';
 
 export const playlists:PlaylistInterface[] = [
    {id:1,nome:'pop brasil',foto:"assets/imgs/teste1.png", musicas: [Musicas[0], Musicas[2], Musicas[1]]},

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {playlists} from '../mock-playlist';
-import { PlaylistInterface } from '../playlist';
+import {playlists} from '../playlists/mock-playlist';
+import { PlaylistInterface } from '../playlists/playlist';
+import { PlaylistService } from '../playlists/playlist.service';
+
 
 @Component({
   selector: 'app-lista-playlist',
@@ -8,13 +10,13 @@ import { PlaylistInterface } from '../playlist';
   styleUrls: ['./lista-playlist.component.css']
 })
 export class ListaPlaylistComponent implements OnInit {
-  lists = playlists;
+  lists:PlaylistInterface[];
   
-  constructor() {};
+  constructor(private ps:PlaylistService) {};
 
   ngOnInit(): void {
 
-    
+    this.lists = this.ps.all();
     
   }
 

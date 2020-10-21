@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {playlists} from '../mock-playlist';
+import {playlists} from '../playlists/mock-playlist';
 
 @Component({
   selector: 'app-listar-musica',
