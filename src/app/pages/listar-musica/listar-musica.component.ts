@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {playlists} from '../playlists/mock-playlist';
+import { PlaylistInterface } from '../playlists/playlist';
+import { PlaylistService } from '../playlists/playlist.service';
 
 @Component({
   selector: 'app-listar-musica',
@@ -8,27 +9,25 @@ import {playlists} from '../playlists/mock-playlist';
   styleUrls: ['./listar-musica.component.css']
 })
 export class ListarMusicaComponent implements OnInit {
-  public playlistID: any
-  public playlist: any
+  public playlist: PlaylistInterface
   public audio:any 
   public musicaatual: string
-  public playlistsize:number
   
  
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private playlistService: PlaylistService) {
   
   }
  
   ngOnInit(): void {
     this.audio = document.getElementById("audio")
-    this.playlistID = this.route.snapshot.paramMap.get("playlistId")
-    this.playlist = playlists[this.playlistID]
+    var playlistID = parseInt(this.route.snapshot.paramMap.get("playlistId"))
+    this.playlist = this.playlistService.get(playlistID);
   
     this.audio.onended= () =>{
          if(parseInt(this.musicaatual)<this.playlist.musicas.length - 1){
            this.audioPlayer(String(parseInt(this.musicaatual)+1))
          }else{
-          this.stopMusic(this.musicaatual)
+           this.stopMusic(this.musicaatual)
          }
     };
 
@@ -36,28 +35,18 @@ export class ListarMusicaComponent implements OnInit {
     
       
   };
-
-
-
-  
   
   ngOnDestroy(): void{
     this.audio.pause()
+    this.audio.src = ""
   }
+
   audioPlayer(musicaId:any) {
     if(this.musicaatual != musicaId){
       if(this.musicaatual != undefined){
         this.stopMusic(this.musicaatual)
       }
-      this.musicaatual = musicaId
-      this.audio.src = this.playlist.musicas[parseInt(musicaId)].arquivo
-      this.audio.play();
-      var button = document.getElementById(musicaId)
-      button.textContent = "Stop"
-     
-      var div = document.getElementById("musica" + musicaId)
-      div.style.backgroundColor = "#1DB954"
-      
+      this.playMusic(musicaId)
       
     }else{
       this.stopMusic(this.musicaatual)
@@ -71,13 +60,17 @@ export class ListarMusicaComponent implements OnInit {
     button.textContent = "Play"
     this.audio.pause()
     this.audio.src = ""
-    this.musicaatual = undefined
-    var div = document.getElementById("musica" + id)
-    div.style.backgroundColor = ""
+    this.musicaatual = null;
 
 
   }
 
-  
+  playMusic(id: string){
+      this.musicaatual = id;
+      this.audio.src = this.playlist.musicas[parseInt(id)].arquivo
+      this.audio.play();
+      var button = document.getElementById(id)
+      button.textContent = "Stop"
+  }
 
 }

@@ -1,4 +1,5 @@
-import { Musica } from '../musica';
+import { Musica } from '../musicas/musica';
+
 
 export interface PlaylistInterface{
     id:number;

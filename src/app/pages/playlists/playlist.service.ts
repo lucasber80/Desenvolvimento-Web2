@@ -16,4 +16,7 @@ export class PlaylistService {
   insert(playlist:PlaylistInterface){
     playlists.push(playlist);
   }
+  get(id: number): PlaylistInterface{
+    return playlists[id];
+  }
 }
