@@ -1,5 +1,5 @@
+import { playlists } from './../playlists/mock-playlist';
 import { Component, OnInit } from '@angular/core';
-import {playlists} from '../playlists/mock-playlist';
 import { PlaylistInterface } from '../playlists/playlist';
 import { PlaylistService } from '../playlists/playlist.service';
 
@@ -11,14 +11,24 @@ import { PlaylistService } from '../playlists/playlist.service';
 })
 export class ListaPlaylistComponent implements OnInit {
   lists:PlaylistInterface[];
+
+  playlistPrevious: PlaylistInterface[]
   
-  constructor(private ps:PlaylistService) {};
+  constructor(public ps:PlaylistService) {};
 
   ngOnInit(): void {
-
+    //this.getter();
     this.lists = this.ps.all();
     
   }
+
+  getter(){
+    this.ps.getPlaylist().subscribe(data =>{
+      console.log(data)
+    })
+  }
+
+      
 
   
   

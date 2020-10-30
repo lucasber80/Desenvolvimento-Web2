@@ -1,3 +1,4 @@
+import { MusicaService } from './pages/musicas/musica.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,6 +11,9 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { ListarMusicaComponent } from './pages/listar-musica/listar-musica.component';
 import { ListaPlaylistComponent } from './pages/lista-playlist/lista-playlist.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
+
+
+import { HttpClientModule } from '@angular/common/http' 
 
 
 
@@ -28,9 +32,10 @@ import { FormularioComponent } from './pages/formulario/formulario.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule,MusicaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
