@@ -15,7 +15,7 @@ export class ListarMusicaComponent implements OnInit {
   public audio:any 
   public musicaatual: string
   public musicasPlaylist = new Array;
-  public lists = new Array;;
+ 
   
   
   
@@ -27,17 +27,19 @@ export class ListarMusicaComponent implements OnInit {
   ngOnInit(): void {
    
     
+    var playlistID = parseInt(this.route.snapshot.paramMap.get("playlistId"))
     this.audio = document.getElementById("audio")
-    this.getPlaylists();
+    this.getPlaylist(playlistID + 1);
   
     
     
    
-    var playlistID = parseInt(this.route.snapshot.paramMap.get("playlistId"))
-    this.playlist = this.lists[playlistID];
+    
+    
    
    
     this.getMusicas();
+    
     
    
     
@@ -75,10 +77,15 @@ export class ListarMusicaComponent implements OnInit {
     )
   }
 
-  getPlaylists(){
+  getPlaylist(playlistId:number){
     this.playlistService.getPlaylist().subscribe(data =>{
-     this.lists = data
-      
+      for(var i = 0;i < data.length;i++){
+        if(playlistId == data[i].id){
+          this.playlist = data[i];
+          
+        }
+      }
+
     }
    )
   }
