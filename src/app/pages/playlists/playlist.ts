@@ -1,7 +1,7 @@
 import { Musica } from '../musicas/musica';
 
 
-export interface PlaylistInterface{
+export class PlaylistInterface{
     id:number;
     nome:String;
     foto:String;

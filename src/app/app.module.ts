@@ -1,4 +1,4 @@
-import { MusicaService } from './pages/musicas/musica.service';
+import { MusicaService } from './pages/services/musica.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
