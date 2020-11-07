@@ -1,77 +1,140 @@
 {
-    "Musicas":[
-        {
-            "id":0,
-            "nome":"braba",
-            "cantor":"Luiza Sonza",
-            "album": "BRABA",
-            "arquivo":".\\.\\assets\\Musicas\\BRABA.mp3",
-            "duracao":"02:09"
-        },
-        {
-            "id":1,
-            "nome":"Me Gusta",
-            "cantor":"Anitta",
-            "album": "Me Gusta",
-            "arquivo":".\\.\\assets\\Musicas\\Anitta, Myke Towers, Cardi B - Me Gusta (with Cardi B & Myke Towers).mp3",
-            "duracao":"03:00"
-        },
-        {
-            "id":2,
-            "nome":"vai ter que aguentar ",
-            "cantor":"Mc Don Juan part. Maiara & Maraisa",
-            "album": "Vou Além",
-            "arquivo":".\\.\\assets\\Musicas\\02 Vai Ter Que Aguentar (part. Maiar.mp3",
-            "duracao":"02:52" 
-        },
-        {
-            "id":3,
-            "nome":"Ela Só Quer Paz (Ao Vivo)",
-            "cantor":"Projota",
-            "album": "3FS",
-            "arquivo":".\\.\\assets\\Musicas\\03 - Projota - Ela Só Quer Paz (Ao Vivo).mp3",
-            "duracao":"02:58" 
-        },
-        {
-            "id":4,
-            "nome":"Me Conta da Tua Janela",
-            "cantor":"Anavitória",
-            "album": "Me Conta da Tua Janela",
-            "arquivo":".\\.\\assets\\Musicas\\Me conta da tua janela.mp3",
-            "duracao":"03:22" 
-        },
-        {
-            "id":5,
-            "nome":"Old Town Road",
-            "cantor":"Lil Nas X",
-            "album": "7",
-            "arquivo":".\\.\\assets\\Musicas\\Old-Town-Road.mp3",
-            "duracao":"01:53" 
-        },
-        {
-            "id":6,
-            "nome":"De Janeiro a Janeiro (Ao Vivo)",
-            "cantor":"Nando Reis",
-            "album": "Para Aquelas Perguntas Tortas",
-            "arquivo":".\\.\\assets\\Musicas\\04 De Janeiro a Janeiro (Ao Vivo).mp3",
-            "duracao":"05:47" 
-        }
-
-
-       
-       
-    
-    
-    ]
-
-
-
-
-
-
-
-
-
-
-
+  "Musicas": [
+    {
+      "id": 0,
+      "nome": "braba",
+      "cantor": "Luiza Sonza",
+      "album": "BRABA",
+      "arquivo": ".\\.\\assets\\Musicas\\BRABA.mp3",
+      "duracao": "02:09"
+    },
+    {
+      "id": 1,
+      "nome": "Me Gusta",
+      "cantor": "Anitta",
+      "album": "Me Gusta",
+      "arquivo": ".\\.\\assets\\Musicas\\Anitta, Myke Towers, Cardi B - Me Gusta (with Cardi B & Myke Towers).mp3",
+      "duracao": "03:00"
+    },
+    {
+      "id": 2,
+      "nome": "vai ter que aguentar ",
+      "cantor": "Mc Don Juan part. Maiara & Maraisa",
+      "album": "Vou Além",
+      "arquivo": ".\\.\\assets\\Musicas\\02 Vai Ter Que Aguentar (part. Maiar.mp3",
+      "duracao": "02:52"
+    },
+    {
+      "id": 3,
+      "nome": "Ela Só Quer Paz (Ao Vivo)",
+      "cantor": "Projota",
+      "album": "3FS",
+      "arquivo": ".\\.\\assets\\Musicas\\03 - Projota - Ela Só Quer Paz (Ao Vivo).mp3",
+      "duracao": "02:58"
+    },
+    {
+      "id": 4,
+      "nome": "Me Conta da Tua Janela",
+      "cantor": "Anavitória",
+      "album": "Me Conta da Tua Janela",
+      "arquivo": ".\\.\\assets\\Musicas\\Me conta da tua janela.mp3",
+      "duracao": "03:22"
+    },
+    {
+      "id": 5,
+      "nome": "Old Town Road",
+      "cantor": "Lil Nas X",
+      "album": "7",
+      "arquivo": ".\\.\\assets\\Musicas\\Old-Town-Road.mp3",
+      "duracao": "01:53"
+    },
+    {
+      "id": 6,
+      "nome": "De Janeiro a Janeiro (Ao Vivo)",
+      "cantor": "Nando Reis",
+      "album": "Para Aquelas Perguntas Tortas",
+      "arquivo": ".\\.\\assets\\Musicas\\04 De Janeiro a Janeiro (Ao Vivo).mp3",
+      "duracao": "05:47"
+    }
+  ],
+  "Playlists": [
+    {
+      "id": 0,
+      "nome": "pop brasil",
+      "foto": "assets/imgs/teste1.png",
+      "musicas": [
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "nome": "brasil 360",
+      "foto": "assets/imgs/teste2.png",
+      "musicas": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "hip-hop",
+      "foto": "assets/imgs/teste3.jpg",
+      "musicas": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "house brasil",
+      "foto": "assets/imgs/teste4.png",
+      "musicas": []
+    },
+    {
+      "id": 4,
+      "nome": "nao sei",
+      "foto": "assets/imgs/teste5.png",
+      "musicas": []
+    },
+    {
+      "id": 5,
+      "nome": "midnight ride",
+      "foto": "assets/imgs/teste6.png",
+      "musicas": []
+    },
+    {
+      "id": 6,
+      "nome": "top brasil",
+      "foto": "assets/imgs/teste7.png",
+      "musicas": []
+    },
+    {
+      "id": 7,
+      "nome": "pagodeira",
+      "foto": "assets/imgs/teste8.png",
+      "musicas": []
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "email": "victor@email.com",
+      "emailC": "victor@email.com",
+      "senha": "victor",
+      "nome": "victor",
+      "data": "2020-11-11",
+      "genero": "male",
+      "id": 4
+    }
+  ]
 }

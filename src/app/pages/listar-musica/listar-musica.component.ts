@@ -1,11 +1,9 @@
-import { playlists } from './../playlists/mock-playlist';
-import { MusicaService } from './../musicas/musica.service';
+import { MusicaService } from '../services/musica.service';
 import { Musica } from './../musicas/musica';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlaylistInterface } from '../playlists/playlist';
-import { PlaylistService } from '../playlists/playlist.service';
-
+import { PlaylistService } from '../services/playlist.service';
 @Component({
   selector: 'app-listar-musica',
   templateUrl: './listar-musica.component.html',
@@ -16,7 +14,8 @@ export class ListarMusicaComponent implements OnInit {
   public audio:any 
   public musicaatual: string
   public musicasPlaylist = new Array;
-  erro:any;
+ 
+  
   
   
  
@@ -26,11 +25,24 @@ export class ListarMusicaComponent implements OnInit {
  
   ngOnInit(): void {
    
-    this.audio = document.getElementById("audio")
+    
     var playlistID = parseInt(this.route.snapshot.paramMap.get("playlistId"))
-    this.playlist = this.playlistService.get(playlistID);
+    this.audio = document.getElementById("audio")
+    this.getPlaylist(playlistID + 1);
+  
+    
+    
+   
+    
+    
+   
+   
     this.getMusicas();
-    console.log(this.musicasPlaylist)
+    
+    
+   
+    
+    
     
     
     this.audio.onended= () =>{
@@ -49,6 +61,7 @@ export class ListarMusicaComponent implements OnInit {
         var musicas: Musica[]
         musicas = data
         
+        
         for(var i = 0;i < this.playlist.musicas.length;i++){
           for(var j = 0;j < musicas.length;j++){
             if(this.playlist.musicas[i] == musicas[j].id){
@@ -58,12 +71,22 @@ export class ListarMusicaComponent implements OnInit {
         }
 
         
-      },
-      (error:any)=>{
-        this.erro = error;
-        console.log(this.erro)
       }
+
     )
+  }
+
+  getPlaylist(playlistId:number){
+    this.playlistService.getPlaylist().subscribe(data =>{
+      for(var i = 0;i < data.length;i++){
+        if(playlistId == data[i].id){
+          this.playlist = data[i];
+          
+        }
+      }
+
+    }
+   )
   }
 
   
@@ -99,7 +122,7 @@ export class ListarMusicaComponent implements OnInit {
 
   playMusic(id: string){
       this.musicaatual = id;
-      console.log(id)
+  
       this.audio.src = this.musicasPlaylist[id].arquivo
       this.audio.play();
       var button = document.getElementById(id)

@@ -1,4 +1,4 @@
-import { MusicaService } from './pages/musicas/musica.service';
+import { MusicaService } from './pages/services/musica.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,6 +14,7 @@ import { FormularioComponent } from './pages/formulario/formulario.component';
 
 
 import { HttpClientModule } from '@angular/common/http' 
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 
 
@@ -33,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule 
   ],
   providers: [HttpClientModule,MusicaService],
   bootstrap: [AppComponent]
