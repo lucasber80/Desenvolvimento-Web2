@@ -11,10 +11,11 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { ListarMusicaComponent } from './pages/listar-musica/listar-musica.component';
 import { ListaPlaylistComponent } from './pages/lista-playlist/lista-playlist.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
+import { BuscaMusicaComponent } from './pages/busca-musica/busca-musica.component';
 
 
 import { HttpClientModule } from '@angular/common/http' 
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,13 +28,15 @@ import { HttpClientModule } from '@angular/common/http'
     ListarMusicaComponent,
     ListaPlaylistComponent,
     FormularioComponent,
+    BuscaMusicaComponent,
     
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [HttpClientModule,MusicaService],
   bootstrap: [AppComponent]

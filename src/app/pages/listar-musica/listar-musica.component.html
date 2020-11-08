@@ -1,38 +1,39 @@
-<div id = "fundo">
-  <div id = "conteudo"  class="container">
-      <div class = "row" style="margin:center;" >
-            <div class = "col">
+<div id="fundo">
+    <div id="conteudo" class="container">
+        <div class="row" style="margin:center;">
+            <div class="col">
                 <img src="{{playlist.foto}}">
             </div>
-        <div class="container" id = "playlist"  class = "col">
-        <div class = "container pt-3" *ngFor="let musica of musicasPlaylist;index as i" id = "music">
-                <div class = "row display flex" id = "nome">
-                    <div class = "col-2">
-                       
-                        <button (click)="audioPlayer($event.target.id)" type="button" class="btn btn-secondary" id="{{i}}">Play</button>
-                       
+            <div class="container" id="playlist" class="col">
+                <div class="container pt-3" *ngFor="let musica of musicasPlaylist;index as i" id="music">
+                    <div class="row display flex" id="nome">
+                        <div class="col-2">
+
+                            <button (click)="audioPlayer($event.target.id)" type="button" class="btn btn-secondary"
+                                id="{{i}}">Play</button>
+
+                        </div>
+                        <div class="col-7">
+                            <p id="nomedamusica">{{musica.nome}}</p>
+                        </div>
+                        <div class="col-2">
+                            <p id="duracao">{{musica.duracao}}</p>
+                        </div>
+
                     </div>
-                    <div class = "col-7">
-                        <p id = "nomedamusica">{{musica.nome}}</p>
-                    </div>
-                    <div class = "col-2">
-                        <p id = "duracao">{{musica.duracao}}</p>
-                    </div>
-        
-                </div>
-                <div class = "row display flex" id = "albumdiv">
-                    <div class = "col-3 offset-md-2">
-                        <p id = "artista"> {{musica.cantor}}</p>
-                    </div>
-                    <div class = "col-5">
-                        <p id = "album">{{musica.album}}</p>
+                    <div class="row display flex" id="albumdiv">
+                        <div class="col-3 offset-md-2">
+                            <p id="artista"> {{musica.cantor}}</p>
+                        </div>
+                        <div class="col-5">
+                            <p id="album">{{musica.album}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-      </div>
-      <audio id= "audio" controls></audio>
+        <audio id="audio" controls></audio>
     </div>
-    
+
 </div>
 

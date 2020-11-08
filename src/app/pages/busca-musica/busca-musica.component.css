@@ -1,0 +1,51 @@
+#page{
+    margin-top: 100px;
+}
+
+#nomedamusica{
+    font-size: 15px;   
+    color: #C9C6C2;
+}
+#duracao{
+    font-size: small; 
+    color: #828587;
+}
+#artista{
+    font-size: small;
+    color: #828587;
+}
+#album{
+    font-size: small; 
+    color: #828587;
+}
+#nome{
+    height: 20px;
+}
+
+button{
+    background: none;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline:none;
+    background-position: center;
+}
+
+
+#musicas{
+    width: 40%;
+    margin-bottom:15em;
+    padding-right: 0em;
+    margin-right: 5em;
+}
+
+
+
+#music:hover{
+    background-color: #515050;
+}
+
+#music{
+    padding-right: 0em;
+}

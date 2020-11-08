@@ -2,7 +2,7 @@
     "Musicas":[
         {
             "id":0,
-            "nome":"braba",
+            "nome":"Braba",
             "cantor":"Luiza Sonza",
             "album": "BRABA",
             "arquivo":".\\.\\assets\\Musicas\\BRABA.mp3",
@@ -18,7 +18,7 @@
         },
         {
             "id":2,
-            "nome":"vai ter que aguentar ",
+            "nome":"Vai ter que aguentar ",
             "cantor":"Mc Don Juan part. Maiara & Maraisa",
             "album": "Vou Além",
             "arquivo":".\\.\\assets\\Musicas\\02 Vai Ter Que Aguentar (part. Maiar.mp3",

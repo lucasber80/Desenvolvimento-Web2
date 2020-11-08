@@ -5,6 +5,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { ListaPlaylistComponent } from './pages/lista-playlist/lista-playlist.component';
 import { ListarMusicaComponent } from './pages/listar-musica/listar-musica.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
+import { BuscaMusicaComponent } from './pages/busca-musica/busca-musica.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   path: '',
   pathMatch: 'full',
   redirectTo: 'descriçao'
-}
+},
+{path: "buscar", component:BuscaMusicaComponent},
 ];
 
 @NgModule({

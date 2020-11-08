@@ -29,7 +29,7 @@ export class ListarMusicaComponent implements OnInit {
     
     var playlistID = parseInt(this.route.snapshot.paramMap.get("playlistId"))
     this.audio = document.getElementById("audio")
-    this.getPlaylist(playlistID + 1);
+    this.getPlaylist(playlistID);
   
     
     

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CompartilhamentoService } from '../pages/compartilhamento/compartilhamento.service';
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +11,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  searchWord = new FormControl('');
 
-  constructor() { }
+
+  constructor(private router: Router, private compartilhamento: CompartilhamentoService) {
+
+
+  }
 
   ngOnInit(): void {
+
+  }
+
+  openSearch() {
+    this.router.navigate(['buscar'])
+  }
+
+  search() {
+    this.compartilhamento.changeMessage(this.searchWord.value);
   }
 
 }

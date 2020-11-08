@@ -1,10 +1,11 @@
-<header><!-- inicio Cabecalho -->
+<header>
+  <!-- inicio Cabecalho -->
   <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-transparente">
     
     <div class="container">
 
       <a href="index.html" class="navbar-brand">
-        <img  src="assets/logo.svg" width="142">
+        <img src="assets/logo.svg" width="142">
       </a>
 
       <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
@@ -31,14 +32,14 @@
           <li class="nav-item">
             <a href="" class="nav-link">Entrar</a>
           </li>
-        
-            <form class="form-inline" style="margin-left: 1em;">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-         
+          <li>
+            <input [formControl]="searchWord" (input)="search()" (click)="openSearch()" id="musica_search"
+              class="form-control mr-sm-4" type="search" placeholder="Busque artistas ou músicas" aria-label="Busque artistas ou músicas">
+          </li>
         </ul>
       </div>
 
     </div>
   </nav>
-</header><!--/fim Cabecalho -->
+</header>
+<!--/fim Cabecalho -->
