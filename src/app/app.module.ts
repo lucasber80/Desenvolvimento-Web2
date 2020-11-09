@@ -11,6 +11,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { ListarMusicaComponent } from './pages/listar-musica/listar-musica.component';
 import { ListaPlaylistComponent } from './pages/lista-playlist/lista-playlist.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
+import {LoginComponent} from './pages/login/login.component'
 
 
 import { HttpClientModule } from '@angular/common/http' 
@@ -28,6 +29,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
     ListarMusicaComponent,
     ListaPlaylistComponent,
     FormularioComponent,
+    LoginComponent,
     
     
   ],

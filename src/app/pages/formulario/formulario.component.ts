@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../services/usuario.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-formulario',
@@ -10,7 +11,7 @@ import { UsuarioService } from '../services/usuario.service';
 export class FormularioComponent implements OnInit {
 
   formulario: FormGroup;
-  constructor(private fb: FormBuilder, private us: UsuarioService) { }
+  constructor(private router: Router,private fb: FormBuilder, private us: UsuarioService) { }
 
   ngOnInit(): void {
     this.formulario = this.fb.group({
@@ -30,7 +31,7 @@ export class FormularioComponent implements OnInit {
         alert("E-mais diferentes")
     }
     console.log(this.formulario.value)
-    this.us.insert(this.formulario.value).subscribe(
+    var usuario = this.us.insert(this.formulario.value).subscribe(
       data => {
         console.log('POST Request is successful ', data);
       },
@@ -38,6 +39,8 @@ export class FormularioComponent implements OnInit {
         console.log('Error', error);
       }
     );
+    window.localStorage.setItem('user', JSON.stringify(usuario));
+    this.router.navigate(['/descriçao']);
   }
 
 }
