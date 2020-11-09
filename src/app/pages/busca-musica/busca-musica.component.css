@@ -1,22 +1,25 @@
 #page{
-    margin-top: 100px;
-}
+    padding-top: 7em;
+    padding-left:2em ;
+    padding-right: 2em;
+    background-color: #121212;
+    }
 
 #nomedamusica{
     font-size: 15px;   
-    color: #C9C6C2;
+    color: white;
 }
 #duracao{
     font-size: small; 
-    color: #828587;
+    color: white;
 }
 #artista{
     font-size: small;
-    color: #828587;
+    color: white;
 }
 #album{
     font-size: small; 
-    color: #828587;
+    color: white;
 }
 #nome{
     height: 20px;
@@ -32,11 +35,16 @@ button{
     background-position: center;
 }
 
+#button2{
+    
+    position: center;
+    margin-bottom: 15em;
+}
 
 #musicas{
     width: 40%;
     margin-bottom:15em;
-    padding-right: 0em;
+  
     margin-right: 5em;
 }
 

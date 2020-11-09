@@ -1,13 +1,14 @@
-<div class="container" id="page">
+<div class="container-flex" id="page">
     <div class = "row">
     <div class="col" id="musicas">
-        <h4>Músicas</h4>
+        <h4 style="color: white;">Músicas</h4>
         <div class="container pt-3" *ngFor="let musica of musicas[0];index as i" id="music">
             <div class="row display flex" id="nome">
                 <div class="col-2">
 
                     <button (click)="currentPlaylist = 0; audioPlayer($event.target.id)" type="button"
                         id="{{musica.id}}" [ngStyle]="{'backgroundImage': musicaatual == [musica.id] ? 'url(./assets/stop_button.png)' : 'url(./assets/play_button.png)'}"></button>
+                    
 
                 </div>
                 <div class="col-7">
@@ -29,7 +30,7 @@
         </div>
     </div>
     <div class="col" id="musicas">
-        <h4>Artistas</h4>
+        <h4 style="color: white;">Artistas</h4>
         <div class="container pt-3" *ngFor="let musica of musicas[1];index as i" id="music">
             <div class="row display flex" id="nome">
                 <div class="col-2">
