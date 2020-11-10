@@ -60,13 +60,14 @@
   "Playlists": [
     {
       "id": 0,
-      "nome": "pop brasil",
+      "nome": "alterando",
       "foto": "assets/imgs/teste1.png",
       "musicas": [
         0,
         2,
         1
-      ]
+      ],
+      "id_usuario": 4
     },
     {
       "id": 1,
@@ -126,6 +127,37 @@
         3
       ],
       "id_usuario": 4
+    },
+    {
+      "id": 20,
+      "nome": "teste 2",
+      "foto": "path2",
+      "musicas": [
+        1,
+        2,
+        3
+      ],
+      "id_usuario": 4
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "email": "victor@email.com",
+      "emailC": "victor@email.com",
+      "senha": "victor",
+      "nome": "victor",
+      "data": "2020-11-11",
+      "genero": "male",
+      "id": 4
     }
   ]
 }

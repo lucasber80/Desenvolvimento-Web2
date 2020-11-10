@@ -18,9 +18,11 @@ export class PlaylistService {
   ) { }
 
   
-  public getPlaylist():Observable<PlaylistInterface[]>{
+   public getPlaylist():Observable<PlaylistInterface[]>{
     return this.http.get<PlaylistInterface[]>(this.apiUrl)
   }
+
+  
 
   public adicionarPlaylist(playlist:PlaylistInterface) {
     this.http.post(this.apiUrl, playlist)
@@ -31,6 +33,27 @@ export class PlaylistService {
                 erro => {
                   if(erro.status == 400) {
                     console.log(erro);
+                  }
+                }
+              );
+  }
+
+  alterarProduto(playlist:PlaylistInterface) {
+    var id = playlist.id
+  
+    this.http.put(`${ this.apiUrl }/${id}`, playlist)
+              .subscribe(
+                resultado => {
+                  console.log('Produto alterado com sucesso.')
+                },
+                erro => {
+                  switch(erro.status) {
+                    case 400:
+                      console.log(erro.error.mensagem);
+                      break;
+                    case 404:
+                      console.log('Produto não localizado.');
+                      break;
                   }
                 }
               );

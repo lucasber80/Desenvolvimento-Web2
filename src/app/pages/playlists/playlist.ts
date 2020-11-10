@@ -1,4 +1,4 @@
-import { Musica } from '../musicas/musica';
+
 
 
 export class PlaylistInterface{
@@ -15,4 +15,6 @@ export class PlaylistInterface{
         this.musicas = musicas;
         this.id_usuario = id_usuario;
    }
+  
+   
 }

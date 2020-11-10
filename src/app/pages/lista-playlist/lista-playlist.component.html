@@ -3,7 +3,7 @@
         <h1 Style ="text-align: center; color: white;">Grandes playlists para melhorar seu dia!</h1>
         <div class="container" id="teste">
            <div class="row">
-              <a routerLink="/listar-musica/{{i}}" *ngFor="let list of lists;index as i" class="card text-white bg-primary mb-3" style="width: 15rem;">
+              <a routerLink="/listar-musica/{{list.id}}" *ngFor="let list of lists;index as i" class="card text-white bg-primary mb-3" style="width: 15rem;">
                 
                   <img class="card-img-top" src="{{list.foto}}" alt="Card image cap">
                   <div class="card-body">

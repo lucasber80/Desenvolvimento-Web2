@@ -61,17 +61,14 @@ export class ListarMusicaComponent implements OnInit {
       data => {
         var musicas: Musica[]
         musicas = data
-        
-        
+
         for(var i = 0;i < this.playlist.musicas.length;i++){
           for(var j = 0;j < musicas.length;j++){
             if(this.playlist.musicas[i] == musicas[j].id){
               this.musicasPlaylist.push(musicas[j])
             }
           }
-        }
-
-        
+        }    
       }
 
     )
@@ -85,7 +82,6 @@ export class ListarMusicaComponent implements OnInit {
           
         }
       }
-
     }
    )
   }
