@@ -76,7 +76,8 @@
       "musicas": [
         4,
         6
-      ]
+      ],
+      "id_usuario": 4
     },
     {
       "id": 2,
@@ -91,7 +92,8 @@
       "id": 3,
       "nome": "house brasil",
       "foto": "assets/imgs/teste4.png",
-      "musicas": []
+      "musicas": [],
+      "id_usuario": 4
     },
     {
       "id": 4,
@@ -126,7 +128,7 @@
         2,
         3
       ],
-      "id_usuario": 4
+      "id_usuario": 80
     },
     {
       "id": 20,

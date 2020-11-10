@@ -13,7 +13,7 @@ import { PlaylistService } from '../services/playlist.service';
 })
 export class ListaPlaylistComponent implements OnInit {
   
-  lists = new Array;
+  lists;
   playlist;
   
   
@@ -23,40 +23,22 @@ export class ListaPlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     this.getter();
-    this.getPlaylistById(0)
-    console.log(this.playlist)
-    
-   
-    
     
     
 
   }
-
-     getPlaylistById(id:number){
-       console.log(this.lists.length)
-      for(var i = 0;i < this.lists.length;i++){
-        
-        if(this.lists[i].id == id){
-          this.playlist.push(this.lists[i].id);
-          console.log(this.playlist)
-        } 
-      }
-    }
   
-
   
-      getter(){
-      this.ps.getPlaylist().subscribe(data =>{
-        var playlists2:PlaylistInterface[]
-        playlists2 = data;
+  async getter(){
+    var play = this.ps.getPlaylistUsuario()
+    console.log(play)
+    await play.then(data => {
+      this.lists = data
 
-        for(var i = 0;i < playlists2.length;i++){
-          this.lists.push(playlists2[i])
-        }
-      })
-     
-    }
+    })
+  }
+
+ 
     
   
 

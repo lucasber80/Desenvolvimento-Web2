@@ -12,7 +12,8 @@ import { ListarMusicaComponent } from './pages/listar-musica/listar-musica.compo
 import { ListaPlaylistComponent } from './pages/lista-playlist/lista-playlist.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { BuscaMusicaComponent } from './pages/busca-musica/busca-musica.component';
-
+import { LoginComponent } from './pages/login/login.component'
+import { EditarUserComponent } from './pages/editar-user/editar-user.component';
 
 import { HttpClientModule } from '@angular/common/http' 
 import { ReactiveFormsModule } from '@angular/forms';
@@ -30,6 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListaPlaylistComponent,
     FormularioComponent,
     BuscaMusicaComponent,
+    LoginComponent,
+    EditarUserComponent,
     
     
   ],
