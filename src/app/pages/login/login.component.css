@@ -1,0 +1,56 @@
+form{
+    border: 1px solid black;
+    text-align: center;
+    width: 45%;
+    height: 74%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8em;
+}
+
+#img {
+    margin: 4%;
+}
+
+#sub {
+    margin: 5%;
+    font-weight: bold;
+    font-size: 18px;
+}
+ 
+#divv{
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+#blocoE{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10px;
+}
+
+#blocoCE{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10px;
+}
+
+#blocoS{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10px;
+}
+
+#blocoCSC{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10px;
+}
+
+#date{
+    margin: 1.2em;
+}
+
+#space {
+    margin-right: 3%;
+}

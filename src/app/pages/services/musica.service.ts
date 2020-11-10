@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Musica } from '../musicas/musica';
-import {map} from 'rxjs/operators';
+
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -20,6 +20,7 @@ export class MusicaService {
   listarMusicas():Observable<Musica[]>{
     return this.http.get<Musica[]>(this.apiUrl);
   }
+
 
   getMusicaswith(text: string){
     return this.http.get<Musica[]>(`${this.apiUrl}?nome_like=${text}&_sort=nome`); 

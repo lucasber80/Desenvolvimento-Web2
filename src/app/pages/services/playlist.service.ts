@@ -22,21 +22,20 @@ export class PlaylistService {
     return this.http.get<PlaylistInterface[]>(this.apiUrl)
   }
 
-  public getPlaylistById(id:number):PlaylistInterface{
-    
-    this.getPlaylist().subscribe(data =>{
-      for(var i = 0;i < data.length;i++){
-        if(id == data[i].id){
-          console.log("entrou")
-          var playlist = data[i];
-          return playlist;
-        }
-      }
- 
-    })
-
-   return null;
+  public adicionarPlaylist(playlist:PlaylistInterface) {
+    this.http.post(this.apiUrl, playlist)
+              .subscribe(
+                resultado => {
+                  console.log(resultado)
+                },
+                erro => {
+                  if(erro.status == 400) {
+                    console.log(erro);
+                  }
+                }
+              );
   }
+
 
   
  

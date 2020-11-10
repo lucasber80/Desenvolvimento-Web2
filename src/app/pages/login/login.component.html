@@ -1,0 +1,28 @@
+<form [formGroup]="login" (ngSubmit)="entrar()">
+    <div id="img">
+      <img  src="../assets/logo.png" width="142">
+    </div>
+  
+     <div id="sub">
+       Faça seu Login aqui!
+     </div>
+
+    <div id="blocoE">
+      <input class="form-control" type="text" id="email-usuario" formControlName="email" placeholder="E-mail">
+    </div>
+
+    <div id="blocoS">
+      <input class="form-control" type="text" id="senha" formControlName="senha" placeholder="Senha">
+    </div>
+  
+    <div>
+      <button (click)="entrar()"
+       style="margin: 2%;" class= "btn btn-success btn-lg rounded-pill" type="button" data-toggle="modal" data-target="#exampleModal">Entrar</button>
+    </div>
+    <div>
+      <button routerLink="/formulario" 
+       style="margin: 2%;" class= "btn btn-success btn-lg rounded-pill" type="button" data-toggle="modal" data-target="#exampleModal">Inscrever-se</button>
+    </div>
+  
+  </form>
+

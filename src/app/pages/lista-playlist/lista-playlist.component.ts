@@ -23,7 +23,7 @@ export class ListaPlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     this.getter();
-    this.post();
+    
     
    
     

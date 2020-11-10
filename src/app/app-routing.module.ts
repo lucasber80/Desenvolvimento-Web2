@@ -6,6 +6,7 @@ import { ListaPlaylistComponent } from './pages/lista-playlist/lista-playlist.co
 import { ListarMusicaComponent } from './pages/listar-musica/listar-musica.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { BuscaMusicaComponent } from './pages/busca-musica/busca-musica.component';
+import {LoginComponent} from './pages/login/login.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
  {path:"lista-playlist",component:ListaPlaylistComponent},
  {path:"listar-musica/:playlistId", component:ListarMusicaComponent},
  {path:"formulario", component:FormularioComponent},
+ {path:"login", component: LoginComponent},
  {
   path: '',
   pathMatch: 'full',

@@ -26,7 +26,7 @@ export class ListarMusicaComponent implements OnInit {
  
   ngOnInit(): void {
    
-    
+   
     var playlistID = parseInt(this.route.snapshot.paramMap.get("playlistId"))
     this.audio = document.getElementById("audio")
     this.getPlaylist(playlistID);
