@@ -36,7 +36,20 @@ export class PlaylistService {
               );
   }
 
-
+  public async getPlaylistUsuario(): Promise<Observable<PlaylistInterface[]>> {
+    var lista = null;
+    await this.getPlaylist().toPromise().then( async data =>{
+      var id = JSON.parse(window.localStorage.getItem('user')).id
+      lista = new Array();
+      data.forEach(element => {
+        if(element.id_usuario == id){
+          lista.push(element)
+        }
+      });
+      return await lista;
+    })
+    return lista;
+  }
   
  
  

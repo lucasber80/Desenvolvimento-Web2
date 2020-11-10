@@ -2,7 +2,6 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Usuario } from '../usuario/usuario';
 import { HttpClient } from '@angular/common/http';
-import { rejects } from 'assert';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +9,7 @@ import { rejects } from 'assert';
 export class UsuarioService {
 
     apiUrl = 'http://localhost:3000/Usuarios'
+    usuario: Usuario;
 
   constructor(
     private http: HttpClient
@@ -27,6 +27,7 @@ export class UsuarioService {
           if(email == data[i].email && senha == data[i].senha){
               console.log("Usuario confirmado")
               usuario = data[i];
+              this.usuario = usuario
               return await usuario;
           }
         }
@@ -36,7 +37,10 @@ export class UsuarioService {
     }
 
     insert(usuario: Usuario) {
-        return this.http.post(this.apiUrl, usuario)
+      this.usuario = usuario;
+      return this.http.post(this.apiUrl, usuario);
     }
-    
+    public getUser(){
+      return this.usuario;
+    }
 }

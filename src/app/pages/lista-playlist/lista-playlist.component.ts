@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlaylistInterface } from '../playlists/playlist';
 
 import { PlaylistService } from '../services/playlist.service';
+import { Usuario } from '../usuario/usuario';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { PlaylistService } from '../services/playlist.service';
 })
 export class ListaPlaylistComponent implements OnInit {
   
-  lists = new Array;
+  lists;
   
  
   
@@ -24,18 +25,19 @@ export class ListaPlaylistComponent implements OnInit {
   ngOnInit(): void {
     this.getter();
     
-    
    
     
   }
 
   
 
-  getter(){
-    this.ps.getPlaylist().subscribe(data =>{
+  async getter(){
+    var play = this.ps.getPlaylistUsuario()
+    console.log(play)
+    await play.then(data => {
       this.lists = data
+      console.log(data)
     })
-    console.log(this.lists)
   }
 
   post(){

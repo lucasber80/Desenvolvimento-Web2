@@ -75,7 +75,8 @@
       "musicas": [
         4,
         6
-      ]
+      ],
+      "id_usuario": 4
     },
     {
       "id": 2,
@@ -90,7 +91,8 @@
       "id": 3,
       "nome": "house brasil",
       "foto": "assets/imgs/teste4.png",
-      "musicas": []
+      "musicas": [],
+      "id_usuario": 4
     },
     {
       "id": 4,
@@ -124,8 +126,27 @@
         1,
         2,
         3
-      ],
-      "id_usuario": 4
+      ]
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "email": "victor@email.com",
+      "emailC": "victor@email.com",
+      "senha": "victor",
+      "nome": "victor",
+      "data": "2020-11-11",
+      "genero": "male",
+      "id": 4
     }
   ]
 }

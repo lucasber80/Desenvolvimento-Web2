@@ -1,4 +1,3 @@
-import { normalizeGenFileSuffix } from '@angular/compiler/src/aot/util';
 import { Data } from '@angular/router';
 
 export class Usuario{
