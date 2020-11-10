@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CompartilhamentoService } from '../compartilhamento/compartilhamento.service';
+import { CompartilhamentoService } from '../services/compartilhamento/compartilhamento.service';
 import { Musica } from '../musicas/musica';
 import { MusicaService } from '../services/musica.service';
+import { PlaylistInterface } from '../playlists/playlist';
+import { PlaylistService } from '../services/playlist.service';
 
 @Component({
   selector: 'app-busca-musica',
@@ -13,11 +15,12 @@ export class BuscaMusicaComponent implements OnInit {
   musicas: Musica[][];
   musicaatual: string;
   currentPlaylist: number;
+  userPlaylists: PlaylistInterface[]
   audio: any;
   currentIndex: number;
 
 
-  constructor(private compartilhamentoService: CompartilhamentoService, private musicaService: MusicaService) { }
+  constructor(private playlistService: PlaylistService, private compartilhamentoService: CompartilhamentoService, private musicaService: MusicaService) { }
 
   ngOnInit(): void {
     this.musicas = [];
@@ -37,6 +40,14 @@ export class BuscaMusicaComponent implements OnInit {
 
 
 
+  }
+
+  showPlaylists(id: number){
+    this.playlistService.getPlaylist().subscribe(data => { this.userPlaylists = data});
+  }
+
+  addToPlaylist(musicId: number, playlistId: number){
+    this.playlistService.addMusic(musicId, playlistId);
   }
 
   search(searchText:any) {
@@ -66,7 +77,7 @@ export class BuscaMusicaComponent implements OnInit {
   }
 
 
-  //list: true para listagem por nomes e false para listagem por artistas
+ 
   playMusic(id: string) {
     this.musicaatual = id;
     this.currentIndex = this.musicas[this.currentPlaylist].findIndex(musica => musica.id === parseInt(id));

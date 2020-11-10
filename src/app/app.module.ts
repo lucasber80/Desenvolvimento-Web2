@@ -16,6 +16,7 @@ import { BuscaMusicaComponent } from './pages/busca-musica/busca-musica.componen
 
 import { HttpClientModule } from '@angular/common/http' 
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreatePlaylistComponent } from './pages/create-playlist/create-playlist.component';
 
 
 
@@ -30,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListaPlaylistComponent,
     FormularioComponent,
     BuscaMusicaComponent,
+    CreatePlaylistComponent,
     
     
   ],

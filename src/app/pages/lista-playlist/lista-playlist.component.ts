@@ -38,9 +38,7 @@ export class ListaPlaylistComponent implements OnInit {
     console.log(this.lists)
   }
 
-  post(){
-    this.ps.adicionarPlaylist(new PlaylistInterface(8,"so as boas","path",[1,2,3],4))
-  }
+  
 
       
  

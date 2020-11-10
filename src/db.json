@@ -60,72 +60,68 @@
   "Playlists": [
     {
       "id": 0,
-      "nome": "pop brasil",
+      "nome": "Pop Brasil",
       "foto": "assets/imgs/teste1.png",
-      "musicas": [
-        0,
-        2,
-        1
-      ]
+      "id_usuario": 1,
+      "musicas": []
     },
     {
       "id": 1,
-      "nome": "brasil 360",
-      "foto": "assets/imgs/teste2.png",
-      "musicas": [
-        4,
-        6
-      ]
-    },
-    {
-      "id": 2,
       "nome": "hip-hop",
       "foto": "assets/imgs/teste3.jpg",
       "musicas": [
-        3,
-        5
-      ]
+        4,
+        [
+          1
+        ]
+      ],
+      "id_usuario": 1
+    },
+    {
+      "id": 2,
+      "nome": "house brasil",
+      "foto": "assets/imgs/teste4.png",
+      "musicas": [],
+      "id_usuario": 1
     },
     {
       "id": 3,
-      "nome": "house brasil",
-      "foto": "assets/imgs/teste4.png",
-      "musicas": []
+      "nome": "nao sei",
+      "foto": "assets/imgs/teste5.png",
+      "musicas": [],
+      "id_usuario": 1
     },
     {
       "id": 4,
-      "nome": "nao sei",
-      "foto": "assets/imgs/teste5.png",
-      "musicas": []
+      "nome": "midnight ride",
+      "foto": "assets/imgs/teste6.png",
+      "musicas": [],
+      "id_usuario": 1
     },
     {
       "id": 5,
-      "nome": "midnight ride",
-      "foto": "assets/imgs/teste6.png",
-      "musicas": []
+      "nome": "top brasil",
+      "foto": "assets/imgs/teste7.png",
+      "musicas": [],
+      "id_usuario": 1
     },
     {
       "id": 6,
-      "nome": "top brasil",
-      "foto": "assets/imgs/teste7.png",
-      "musicas": []
-    },
-    {
-      "id": 7,
       "nome": "pagodeira",
       "foto": "assets/imgs/teste8.png",
-      "musicas": []
+      "musicas": [],
+      "id_usuario": 1
     },
     {
-      "id": 8,
-      "nome": "so as boas",
-      "foto": "path",
+      "nome": "Teste78",
+      "foto": "",
       "musicas": [
-        1,
-        2,
-        3
+        [
+          0
+        ]
       ],
-      "id_usuario": 4
+      "id_usuario": 1,
+      "id": 7
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CompartilhamentoService } from '../pages/compartilhamento/compartilhamento.service';
+import { CompartilhamentoService } from '../pages/services/compartilhamento/compartilhamento.service';
 
 
 
