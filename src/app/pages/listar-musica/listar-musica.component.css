@@ -1,67 +1,69 @@
-img{
-    height: 15em ;
-    width: 15em ;
-    margin-bottom: 5em;
-
-}
 #fundo{
-    padding-bottom: 10em;
-    background-color: #666666;
-    display: grid;
-}
-#conteudo{
-padding: 4em;
-padding-bottom: 13em;
-margin-top: 6em;
-
-}
+    padding-top: 7em;
+    padding-left:2em ;
+    padding-right: 2em;
+    padding-bottom: 7em;
+    background-color: #121212;
+    }
 
 #nomedamusica{
-    font-size: medium;
-    
-    color: #C9C6C2;
+    font-size: 15px;   
+    color: white;
 }
+
 #duracao{
-    font-size: small;
-    
-    color: #828587;
+  
+    font-size: small; 
+    color: white;
 }
 #artista{
+
     font-size: small;
-   
-    color: #828587;
+    color: white;
 }
 #album{
-    font-size: small;
-    
-    color: #828587;
-}
-#nome{
-    height: 20px;
+    font-size: small; 
+    color: white;
 }
 
-button{
-    
+
+.play_button{
+    background: none;
+    background-repeat: no-repeat;
     height: 32px;
-    width: auto;
+    width: 32px;
+    border: none;
+    outline:none;
+    background-position: center;
 }
 
-#playlist{
-    margin-bottom:5%;
-    padding-right: 0em;
+
+#musicas{
+    width: 30em;
+    margin-bottom:15em;
+    
 }
 
-font{
-    font-weight: bold;
+#music{
+    padding: 1em;
+    margin: 0em;
+    width: 30em;
 }
 
 #music:hover{
     background-color: #515050;
+    padding: 1em;
+ 
 }
 
-#music{
-    padding-right: 0em;
+#add{
+    display: flex;
+    justify-content: flex-end;
 }
-
-
-
+#addbutton{
+    width: auto;
+    border-style: solid;
+    border-color: aqua;
+    display: flex;
+    justify-content: flex-end;
+}

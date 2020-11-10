@@ -1,0 +1,21 @@
+<div class="container">
+    <div style="margin-top: 5px" class="row justify-content-center">
+        <h5> Adicionar Playlist</h5>
+    </div>
+    <div id="add">
+        <div class="row justify-content-center">
+            <label>
+                Nome da Playlist:
+                <input  type="text"  required [formControl]="nome">
+            </label>
+        </div>
+        <div class="row justify-content-center">
+            <button (click)="updateName()" type="button" class="btn btn-light">Adicionar</button>
+        </div>
+    </div>
+    <div *ngIf="nome.invalid && clicked" class="alert alert-danger">
+        <div *ngIf="nome.errors.required">
+           Você precisa nomear sua playlist
+        </div>
+    </div>
+</div>

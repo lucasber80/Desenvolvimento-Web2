@@ -1,63 +1,83 @@
 <div class="container-flex" id="page">
-    <div class = "row">
-    <div class="col" id="musicas">
-        <h4 style="color: white;">Músicas</h4>
-        <div class="container pt-3" *ngFor="let musica of musicas[0];index as i" id="music">
-            <div class="row display flex" id="nome">
-                <div class="col-2">
-
-                    <button (click)="currentPlaylist = 0; audioPlayer($event.target.id)" type="button"
-                        id="{{musica.id}}" [ngStyle]="{'backgroundImage': musicaatual == [musica.id] ? 'url(./assets/stop_button.png)' : 'url(./assets/play_button.png)'}"></button>
-                    
-
+    <div class="row">
+        <div class="col" id="musicas">
+            <h4 style="color: white;">Músicas</h4>
+            <div class=container *ngFor="let musica of musicas[0];index as i" id="music">
+                <div class="row no-gutters" id="nome">
+                    <div class="col-2">
+                        <button (click)="currentPlaylist = 0; audioPlayer($event.target.id)" type="button"
+                            class="play_button" id="{{musica.id}}"
+                            [ngStyle]="{'backgroundImage': musicaatual == [musica.id] ? 'url(./assets/stop_button.png)' : 'url(./assets/play_button.png)'}"></button>
+                    </div>
+                    <div class="col-6" id="nomedamusica">
+                        {{musica.nome}}
+                    </div>
+                    <div class="col-2" id="duracao">
+                        {{musica.duracao}}
+                    </div>
+                    <div class="col-2" id="add">
+                        <div class="dropdown">
+                            <button (click)="showPlaylists()" class="btn btn-secondary dropdown-toggle" type="button"
+                                id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                +
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <button id="{{playlist.id}}" (click)="addToPlaylist([musica.id], $event.target.id)"
+                                    *ngFor="let playlist of userPlaylists" class="dropdown-item"
+                                    type="button">{{playlist.nome}}</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-7">
-                    <p id="nomedamusica">{{musica.nome}}</p>
-                </div>
-                <div class="col-2">
-                    <p id="duracao">{{musica.duracao}}</p>
-                </div>
-
-            </div>
-            <div class="row display flex" id="albumdiv">
-                <div class="col-3 offset-md-2">
-                    <p id="artista"> {{musica.cantor}}</p>
-                </div>
-                <div class="col-5">
-                    <p id="album">{{musica.album}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col" id="musicas">
-        <h4 style="color: white;">Artistas</h4>
-        <div class="container pt-3" *ngFor="let musica of musicas[1];index as i" id="music">
-            <div class="row display flex" id="nome">
-                <div class="col-2">
-
-                    <button (click)="currentPlaylist = 1; audioPlayer($event.target.id); " type="button" id="{{musica.id}}" [ngStyle]="{'backgroundImage': musicaatual == [musica.id] ? 'url(./assets/stop_button.png)' : 'url(./assets/play_button.png)'}"></button>
-
-                </div>
-                <div class="col-7">
-                    <p id="nomedamusica">{{musica.nome}}</p>
-                </div>
-                <div class="col-2">
-                    <p id="duracao">{{musica.duracao}}</p>
-                </div>
-
-            </div>
-            <div class="row display flex" id="albumdiv">
-                <div class="col-3 offset-md-2">
-                    <p id="artista" [ngStyle] = "{'color': '#1db954', 'font-size': '15px', 'font-weight': '4px'}"> {{musica.cantor}}</p>
-                </div>
-                <div class="col-5">
-                    <p id="album">{{musica.album}}</p>
+                <div class="row no-gutters" id="albumdiv">
+                    <div class="col-4 offset-md-2" id="artista">
+                        {{musica.cantor}}
+                    </div>
+                    <div class="col-4" id="album">
+                        {{musica.album}}
+                    </div>
                 </div>
             </div>
         </div>
-
+        <div class="col" id="musicas">
+            <h4 style="color: white;">Artistas</h4>
+            <div class=container *ngFor="let musica of musicas[1];index as i" id="music">
+                <div class="row no-gutters" id="nome">
+                    <div class="col-2">
+                        <button (click)="currentPlaylist = 0; audioPlayer($event.target.id)" type="button"
+                            class="play_button" id="{{musica.id}}"
+                            [ngStyle]="{'backgroundImage': musicaatual == [musica.id] ? 'url(./assets/stop_button.png)' : 'url(./assets/play_button.png)'}"></button>
+                    </div>
+                    <div class="col-6" id="nomedamusica">
+                        {{musica.nome}}
+                    </div>
+                    <div class="col-2" id="duracao">
+                        {{musica.duracao}}
+                    </div>
+                    <div class="col-2" id="add">
+                        <div class="dropdown">
+                            <button (click)="showPlaylists([musica.id])" class="btn btn-secondary dropdown-toggle" type="button"
+                                id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                +
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <button id="{{playlist.id}}" (click)="addToPlaylist([musica.id], $event.target.id)"
+                                    *ngFor="let playlist of userPlaylists" class="dropdown-item"
+                                    type="button">{{playlist.nome}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters" id="albumdiv">
+                    <div class="col-4 offset-md-2" id="artista">
+                        {{musica.cantor}}
+                    </div>
+                    <div class="col-4" id="album">
+                        {{musica.album}}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <audio id="audio"></audio>
-</div>
-
 </div>

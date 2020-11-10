@@ -17,6 +17,7 @@ import { EditarUserComponent } from './pages/editar-user/editar-user.component';
 
 import { HttpClientModule } from '@angular/common/http' 
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreatePlaylistComponent } from './pages/create-playlist/create-playlist.component';
 
 
 
@@ -31,8 +32,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListaPlaylistComponent,
     FormularioComponent,
     BuscaMusicaComponent,
+<<<<<<< HEAD
     LoginComponent,
     EditarUserComponent,
+=======
+    CreatePlaylistComponent,
+>>>>>>> playlist
     
     
   ],

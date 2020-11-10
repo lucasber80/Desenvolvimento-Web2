@@ -9,11 +9,14 @@
     font-size: 15px;   
     color: white;
 }
+
 #duracao{
+  
     font-size: small; 
     color: white;
 }
 #artista{
+
     font-size: small;
     color: white;
 }
@@ -21,15 +24,13 @@
     font-size: small; 
     color: white;
 }
-#nome{
-    height: 20px;
-}
 
-button{
+
+.play_button{
     background: none;
     background-repeat: no-repeat;
-    height: 50px;
-    width: 50px;
+    height: 32px;
+    width: 32px;
     border: none;
     outline:none;
     background-position: center;
@@ -37,18 +38,31 @@ button{
 
 
 #musicas{
-    width: 40%;
+    width: 30em;
     margin-bottom:15em;
-  
-    margin-right: 5em;
-}
-
-
-
-#music:hover{
-    background-color: #515050;
+    
 }
 
 #music{
-    padding-right: 0em;
+    padding: 1em;
+    margin: 0em;
+    width: 30em;
+}
+
+#music:hover{
+    background-color: #515050;
+    padding: 1em;
+ 
+}
+
+#add{
+    display: flex;
+    justify-content: flex-end;
+}
+#addbutton{
+    width: auto;
+    border-style: solid;
+    border-color: aqua;
+    display: flex;
+    justify-content: flex-end;
 }

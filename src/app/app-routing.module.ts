@@ -7,7 +7,11 @@ import { ListarMusicaComponent } from './pages/listar-musica/listar-musica.compo
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { BuscaMusicaComponent } from './pages/busca-musica/busca-musica.component';
 import {LoginComponent} from './pages/login/login.component';
+<<<<<<< HEAD
 import { EditarUserComponent } from './pages/editar-user/editar-user.component';
+=======
+import { CreatePlaylistComponent } from './pages/create-playlist/create-playlist.component';
+>>>>>>> playlist
 
 
 
@@ -25,6 +29,7 @@ const routes: Routes = [
   pathMatch: 'full',
   redirectTo: 'descriçao'
 },
+{path: "criar-playlist", component:CreatePlaylistComponent},
 {path: "buscar", component:BuscaMusicaComponent},
 ];
 

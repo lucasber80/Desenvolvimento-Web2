@@ -38,6 +38,7 @@ export class ListaPlaylistComponent implements OnInit {
     })
   }
 
+<<<<<<< HEAD
  
     
   
@@ -51,6 +52,9 @@ export class ListaPlaylistComponent implements OnInit {
   put(){
     this.ps.alterarProduto(new PlaylistInterface(0,"alterando","assets/imgs/teste1.png",[0,2,1],4))
   }
+=======
+  
+>>>>>>> playlist
 
       
  
