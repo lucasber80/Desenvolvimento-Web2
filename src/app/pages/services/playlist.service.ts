@@ -22,19 +22,16 @@ export class PlaylistService {
     return this.http.get<PlaylistInterface[]>(this.apiUrl)
   }
 
-<<<<<<< HEAD
   
 
-  public adicionarPlaylist(playlist:PlaylistInterface) {
-    this.http.post(this.apiUrl, playlist)
-=======
+  
   public adicionarPlaylist(nome: string) {
+    var id = JSON.parse(window.localStorage.getItem('user')).id
     var aux = {"nome":nome,
                 "foto": "",
               musicas:[],
-            id_usuario: 1};
+            id_usuario: id};
     this.http.post(this.apiUrl, aux)
->>>>>>> playlist
               .subscribe(
                 resultado => {
                   alert("Playlist adicionada");
@@ -47,7 +44,6 @@ export class PlaylistService {
               );
   }
 
-<<<<<<< HEAD
   alterarProduto(playlist:PlaylistInterface) {
     var id = playlist.id
   
@@ -83,7 +79,7 @@ export class PlaylistService {
       return await lista;
     })
     return lista;
-=======
+  }
   public addMusic(music: number, playlist:number){
     var musics: number[];
     this.http.get<PlaylistInterface>(`${this.apiUrl}/${playlist}`).subscribe(dados=> {musics = dados.musicas; this.aumentar(musics, music, playlist)})
@@ -104,7 +100,6 @@ export class PlaylistService {
     musics.splice(musics.findIndex(element => element = music), 1);
     console.log(musics);
     this.http.patch(`${this.apiUrl}/${playlist}`,  {"musicas":musics}).subscribe(resultado => {}, erro=>{alert(erro)});
->>>>>>> playlist
   }
   
  

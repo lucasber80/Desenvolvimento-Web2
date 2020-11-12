@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
-import { Usuario } from '../usuarios/usuario';
->>>>>>> playlist
+
 
 
 
@@ -19,10 +16,7 @@ export class PlaylistInterface{
         this.musicas = musicas;
         this.id_usuario = id_usuario;
    }
-<<<<<<< HEAD
   
    
-=======
 
->>>>>>> playlist
 }

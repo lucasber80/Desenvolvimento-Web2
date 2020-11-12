@@ -2,7 +2,6 @@ import { Input } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl } from '@angular/forms';
-import { PlaylistInterface } from '../playlists/playlist';
 import { PlaylistService } from '../services/playlist.service';
 @Component({
   selector: 'app-create-playlist',

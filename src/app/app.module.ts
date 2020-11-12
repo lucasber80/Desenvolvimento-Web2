@@ -32,12 +32,9 @@ import { CreatePlaylistComponent } from './pages/create-playlist/create-playlist
     ListaPlaylistComponent,
     FormularioComponent,
     BuscaMusicaComponent,
-<<<<<<< HEAD
     LoginComponent,
     EditarUserComponent,
-=======
     CreatePlaylistComponent,
->>>>>>> playlist
     
     
   ],

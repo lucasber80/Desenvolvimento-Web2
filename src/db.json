@@ -60,13 +60,15 @@
   "Playlists": [
     {
       "id": 0,
-<<<<<<< HEAD
       "nome": "alterando",
       "foto": "assets/imgs/teste1.png",
       "musicas": [
-        0,
-        2,
-        1
+        [
+          5
+        ],
+        [
+          1
+        ]
       ],
       "id_usuario": 4
     },
@@ -82,15 +84,6 @@
     },
     {
       "id": 2,
-=======
-      "nome": "Pop Brasil",
-      "foto": "assets/imgs/teste1.png",
-      "id_usuario": 1,
-      "musicas": []
-    },
-    {
-      "id": 1,
->>>>>>> playlist
       "nome": "hip-hop",
       "foto": "assets/imgs/teste3.jpg",
       "musicas": [
@@ -106,11 +99,7 @@
       "nome": "house brasil",
       "foto": "assets/imgs/teste4.png",
       "musicas": [],
-<<<<<<< HEAD
       "id_usuario": 4
-=======
-      "id_usuario": 1
->>>>>>> playlist
     },
     {
       "id": 3,
@@ -148,7 +137,6 @@
           0
         ]
       ],
-<<<<<<< HEAD
       "id_usuario": 80
     },
     {
@@ -161,10 +149,43 @@
         3
       ],
       "id_usuario": 4
-=======
+    },
+    {
+      "nome": "playlist do vitao",
+      "foto": "",
+      "musicas": [],
       "id_usuario": 1,
-      "id": 7
->>>>>>> playlist
+      "id": 21
+    },
+    {
+      "nome": "playlist do vitao",
+      "foto": "",
+      "musicas": [],
+      "id_usuario": 1,
+      "id": 22
+    },
+    {
+      "nome": "a",
+      "foto": "",
+      "musicas": [
+        [
+          0
+        ],
+        [
+          4
+        ],
+        [
+          6
+        ],
+        [
+          6
+        ],
+        [
+          4
+        ]
+      ],
+      "id_usuario": 4,
+      "id": 23
     }
   ],
   "Usuarios": [
