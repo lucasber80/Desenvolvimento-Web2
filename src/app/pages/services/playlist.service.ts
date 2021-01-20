@@ -10,7 +10,7 @@ import { PlaylistInterface } from '../playlists/playlist';
 })
 export class PlaylistService {
 
-  apiUrl = 'http://localhost:3000/Playlists'
+  apiUrl = 'http://localhost:8000/playlist'
  
 
   constructor(
@@ -32,77 +32,37 @@ export class PlaylistService {
               musicas:[],
             id_usuario: id};
     this.http.post(this.apiUrl, aux)
-              .subscribe(
-                resultado => {
-                  alert("Playlist adicionada");
-                },
-                erro => {
-                  if(erro.status == 400) {
-                    alert("Erro");
-                  }
-                }
-              );
   }
 
   alterarProduto(playlist:PlaylistInterface) {
     var id = playlist.id
   
-    this.http.put(`${ this.apiUrl }/${id}`, playlist)
-              .subscribe(
-                resultado => {
-                  console.log('Produto alterado com sucesso.')
-                },
-                erro => {
-                  switch(erro.status) {
-                    case 400:
-                      console.log(erro.error.mensagem);
-                      break;
-                    case 404:
-                      console.log('Produto não localizado.');
-                      break;
-                  }
-                }
-              );
+    this.http.put(`${ this.apiUrl }/atualizar/${id}`, playlist)
   }
 
 
-  public async getPlaylistUsuario(): Promise<Observable<PlaylistInterface[]>> {
-    var lista = null;
-    await this.getPlaylist().toPromise().then( async data =>{
-      var id = JSON.parse(window.localStorage.getItem('user')).id
-      lista = new Array();
-      data.forEach(element => {
-        if(element.id_usuario == id){
-          lista.push(element)
-        }
-      });
-      return await lista;
-    })
-    return lista;
+  public getPlaylistUsuario(): Observable<PlaylistInterface[]> {
+    var id = JSON.parse(window.localStorage.getItem('user')).id
+    var url = this.apiUrl + "/user/" + id
+    return this.http.get<PlaylistInterface[]>(url)
   }
-  public addMusic(music: number, playlist:number){
-    var musics: number[];
-    this.http.get<PlaylistInterface>(`${this.apiUrl}/${playlist}`).subscribe(dados=> {musics = dados.musicas; this.aumentar(musics, music, playlist)})
-  }
-  
-  public aumentar(musics: number[], music:number, playlist:number){
-    var musics: number[];
-    musics.push(music);
-    this.http.patch(`${this.apiUrl}/${playlist}`,  {"musicas":musics}).subscribe(resultado => {}, erro=>{alert(erro)});
-  }
-
-  public removeMusic(music: number, playlist:number){
-    var musics: number[];
-    this.http.get<PlaylistInterface>(`${this.apiUrl}/${playlist}`).subscribe(dados=> {musics = dados.musicas; this.diminuir(musics, music, playlist)})
-  }
-  public diminuir(musics: number[], music:number, playlist:number){
-    var musics: number[];
-    musics.splice(musics.findIndex(element => element = music), 1);
-    console.log(musics);
-    this.http.patch(`${this.apiUrl}/${playlist}`,  {"musicas":musics}).subscribe(resultado => {}, erro=>{alert(erro)});
-  }
-  
+  public getPlaylistById(playlistId: number): Observable<PlaylistInterface> {
+    var i = playlistId + 1
+    let url = `${this.apiUrl}/${i}`;
+    return this.http.get<PlaylistInterface>(url);
  
+  }
+  
+  public addMusicToPlaylist(music: number, playlist:number):Observable<any>{
+    let url = `${this.apiUrl}/${playlist}/addM/${music}`;
+    return this.http.post(url, {});
+  }
+
+
+  public removeMusicOfPlaylist(music: number, playlist:number):Observable<any>{
+    let url = `${this.apiUrl}/${playlist}/removeM/${music}`;
+    return this.http.delete(url);
+  }
 
  
   

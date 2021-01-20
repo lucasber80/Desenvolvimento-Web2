@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsuarioService {
 
-    apiUrl = 'http://localhost:3000/Usuarios'
+    apiUrl = 'http://localhost:8000/users'
     usuario: Usuario;
 
   constructor(
@@ -19,38 +19,22 @@ export class UsuarioService {
         return this.http.get<Usuario[]>(this.apiUrl)
     }
     
-    public async getUsuarioEmail(email:String,senha:String):Promise<Observable<Usuario>>{
-      
-      var usuario = null;
-      await this.getUsuario().toPromise().then(async data =>{
-        for(var i = 0;i < data.length;i++){
-          if(email == data[i].email && senha == data[i].senha){
-              console.log("Usuario confirmado")
-              usuario = data[i];
-              this.usuario = usuario
-              return await usuario;
-          }
-        }
-    
-      })
-      return usuario
+    public getUsuarioEmail(email:String,senha:String):Observable<Usuario>{
+      var url = this.apiUrl + "/" + email + "/" + senha
+      return this.http.get<Usuario>(url)
     }
 
-    insert(usuario: Usuario) {
+    insert(usuario: Usuario):Observable<Usuario> {
       this.usuario = usuario;
-      return this.http.post(this.apiUrl, usuario);
+      return this.http.post<Usuario>(this.apiUrl, usuario);
     }
     public getUser(){
       return this.usuario;
     }
 
-    update(usuario: Usuario){
+    update(usuario: Usuario):Observable<Usuario>{
       var id = JSON.parse(window.localStorage.getItem('user')).id
-      console.log(id)
       var url = this.apiUrl + "/" + id
-      console.log(url)
-
-      this.http.put(url , usuario)
-      return usuario
+      return this.http.put<Usuario>(url , usuario)
     }
 }

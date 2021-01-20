@@ -30,12 +30,9 @@ export class ListaPlaylistComponent implements OnInit {
   
   
   async getter(){
-    var play = this.ps.getPlaylistUsuario()
-    console.log(play)
-    await play.then(data => {
+    var play = this.ps.getPlaylistUsuario().subscribe(data =>
       this.lists = data
-
-    })
+    )
   }
 
  

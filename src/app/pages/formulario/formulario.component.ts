@@ -19,28 +19,29 @@ export class FormularioComponent implements OnInit {
       emailC: ['',Validators.required],
       senha: ['', Validators.required],
       nome: ['', Validators.required],
-      data: ['', Validators.required],
-      genero: ['', Validators.required]
+      nascimento: ['', Validators.required],
+      gender: ['', Validators.required]
     });
   }
 
   inserir(){
-    const {email, emailC, senha, nome, data, genero} = this.formulario.value
-    console.log(email)
+    const {email, emailC, senha, nome, nascimento, gender} = this.formulario.value
     if(email != emailC) {
         alert("E-mais diferentes")
     }
-    console.log(this.formulario.value)
-    var usuario = this.us.insert(this.formulario.value).subscribe(
-      data => {
-        console.log('POST Request is successful ', data);
-      },
-      error => {
-        console.log('Error', error);
-      }
-    );
-    window.localStorage.setItem('user', JSON.stringify(usuario));
-    this.router.navigate(['/descriçao']);
+    var usuario;
+    var user
+    this.us.insert(this.formulario.value).subscribe(data=>{
+      user = data[0]
+      usuario = this.us.getUsuarioEmail(email, senha).subscribe(data=>{
+        user = data[0];
+        console.log(user)
+        localStorage.setItem('user', JSON.stringify(user));
+        this.router.navigate(['/descriçao']);    
+      })
+    })
+    
+    
   }
 
 }

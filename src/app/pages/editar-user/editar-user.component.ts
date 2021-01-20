@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../services/usuario.service';
 import { Router } from '@angular/router'
+import { Usuario } from '../usuario/usuario';
 
 @Component({
   selector: 'app-editar-user',
@@ -20,20 +21,22 @@ export class EditarUserComponent implements OnInit {
       emailC: ['',Validators.required],
       senha: ['', Validators.required],
       nome: ['', Validators.required],
-      data: ['', Validators.required],
-      genero: ['', Validators.required]
+      nascimento: ['', Validators.required],
+      gender: ['', Validators.required]
     });
   }
 
   inserir(){
-    const {email, emailC, senha, nome, data, genero} = this.formulario.value
-    console.log(email)
+    const {email, emailC, senha, nome, nascimento, gender} = this.formulario.value
     if(email != emailC) {
         alert("E-mais diferentes")
     }
-    console.log(this.formulario.value)
-    var usuario = this.us.update(this.formulario.value)
-    window.localStorage.setItem('user', JSON.stringify(usuario));
+    var usuario
+    var id = JSON.parse(window.localStorage.getItem('user')).id
+    this.us.update(this.formulario.value).subscribe(data => {
+      usuario = new Usuario(id,this.formulario.value.email,this.formulario.value.senha,this.formulario.value.nome,this.formulario.value.nascimento,this.formulario.value.gender)
+      localStorage.setItem('user', JSON.stringify(usuario));
+    })
     this.router.navigate(['/descriçao']);
   }
 

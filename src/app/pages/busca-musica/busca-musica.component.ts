@@ -43,15 +43,18 @@ export class BuscaMusicaComponent implements OnInit {
   }
 
   showPlaylists(id: number){
-    this.playlistService.getPlaylist().subscribe(data => { this.userPlaylists = data});
+    this.playlistService.getPlaylistUsuario().subscribe(data => { this.userPlaylists = data});
   }
 
   addToPlaylist(musicId: number, playlistId: number){
-    this.playlistService.addMusic(musicId, playlistId);
+    this.playlistService.addMusicToPlaylist(musicId, playlistId).subscribe(data=>{}, err=>{console.log(err.message)});
   }
 
   search(searchText:any) {
-    this.musicaService.getMusicaswith(searchText).subscribe(data => { this.musicas[0] = data })
+    this.musicaService.getMusicaswith(searchText).subscribe(data => { 
+    this.musicas[0] = data
+    console.log(data);
+    })
     this.musicaService.getArtistasWith(searchText).subscribe(data => { this.musicas[1] = data })
   }
 

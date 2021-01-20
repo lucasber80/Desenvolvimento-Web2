@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MusicaService {
 
-  apiUrl = 'http://localhost:3000/Musicas'
+  apiUrl = 'http://localhost:8000/musicas'
 
   constructor(
     private http: HttpClient
@@ -23,14 +23,16 @@ export class MusicaService {
 
 
   getMusicaswith(text: string){
-    return this.http.get<Musica[]>(`${this.apiUrl}?nome_like=${text}&_sort=nome`); 
+    return this.http.get<Musica[]>(`${this.apiUrl}/nome/${text}`); 
   }
 
   getArtistasWith(text: string){
-    return this.http.get<any>(`${this.apiUrl}?cantor_like=${text}&_sort=cantor`); 
+    return this.http.get<any>(`${this.apiUrl}/artista/${text}`); 
   }
 
-
+  getMusicasByPlaylist(id: number){
+    return this.http.get<any>(`${this.apiUrl}/playlist/${id+1}`)
+  }
 
   
 

@@ -42,32 +42,15 @@ export class ListarMusicaComponent implements OnInit {
   };
 
   getMusicas() {
-    this.musicaService.listarMusicas().subscribe(
-      data => {
-        var musicas: Musica[]
-        musicas = data;
-        for (var i = 0; i < this.playlist.musicas.length; i++) {
-          for (var j = 0; j < musicas.length; j++) {
-            if (this.playlist.musicas[i] == musicas[j].id ) {
-              this.musicasPlaylist.push(musicas[j])
-            }
-          }
-        }
-      }
-
-    )
+    this.musicaService.getMusicasByPlaylist(this.playlistId).subscribe(data=>{
+        this.musicasPlaylist = data;
+    })
   }
 
   getPlaylist() {
-    this.playlistService.getPlaylist().subscribe(data => {
-      for (var i = 0; i < data.length; i++) {
-        if (this.playlistId == data[i].id) {
-          this.playlist = data[i];
-
-        }
-      }
-    }
-    )
+    this.playlistService.getPlaylistById(this.playlistId).subscribe(data => {
+      this.playlist = data[0];
+    })
   }
 
 
@@ -107,7 +90,7 @@ export class ListarMusicaComponent implements OnInit {
   }
 
   removeMusic(musicId: number){
-    this.playlistService.removeMusic(musicId, this.playlist.id);
+    this.playlistService.removeMusicOfPlaylist(musicId, this.playlist.id).subscribe(data=>{}, err=>{console.log(err.message)});
     this.musicasPlaylist = [];
     this.getPlaylist();
     this.getMusicas();
